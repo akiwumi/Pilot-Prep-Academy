@@ -15,6 +15,7 @@ import { Messages } from './screens/Messages';
 import { Profile } from './screens/Profile';
 import { Logbook } from './screens/Logbook';
 import { BottomNav } from './components/BottomNav';
+import { SideNav } from './components/SideNav';
 import { DEMO_QUIZ_QUESTIONS, DEFAULT_LOCALITY_ID, DEFAULT_REGION_ID, type LocalityId, type QuizResultData, type RegionId } from './data';
 
 export enum Screen {
@@ -148,8 +149,13 @@ export default function App() {
 
   return (
     <div className="flex justify-center min-h-screen bg-background font-display text-slate-900 selection:bg-primary selection:text-white">
-      <div className="w-full max-w-md h-full min-h-screen relative bg-background shadow-2xl flex flex-col">
-        {renderScreen()}
+      <div className="w-full max-w-md md:max-w-3xl lg:max-w-6xl h-full min-h-screen relative bg-background md:bg-transparent md:shadow-none shadow-2xl flex flex-col">
+        <div className="w-full flex-1 md:grid md:grid-cols-[260px_1fr] lg:grid-cols-[280px_1fr] md:gap-0">
+          <SideNav activeScreen={activeScreen} onNavigate={navigate} variant={isDiscoveryMode ? 'directory' : 'course'} />
+          <div className="min-w-0">
+            {renderScreen()}
+          </div>
+        </div>
 
         {/* Global "Home" nav button (Landing page) */}
         {activeScreen !== Screen.Welcome && (

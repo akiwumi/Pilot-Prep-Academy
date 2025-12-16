@@ -14,9 +14,9 @@ export const Messages: React.FC<Props> = ({ onNavigate }) => {
         {/* We will split the view vertically to show both or just simulate the requested layout */}
         
         {/* Split View Container */}
-        <div className="flex flex-col h-full">
-            {/* Top Half: Inbox List (simulating scrollable area) */}
-            <div className="flex-1 flex flex-col min-h-0 bg-background border-b border-slate-200">
+        <div className="flex flex-col md:flex-row h-full">
+            {/* Left: Inbox List */}
+            <div className="flex-1 md:flex-none md:w-[360px] lg:w-[420px] flex flex-col min-h-0 bg-background border-b border-slate-200 md:border-b-0 md:border-r md:border-slate-200">
                 <div className="flex items-center bg-background p-4 pb-2 justify-between shrink-0 z-10">
                     <h2 className="text-slate-900 text-2xl font-bold leading-tight tracking-[-0.015em] flex-1">Messages</h2>
                     <div className="flex items-center justify-end">
@@ -71,8 +71,8 @@ export const Messages: React.FC<Props> = ({ onNavigate }) => {
                 </div>
             </div>
 
-            {/* Bottom Half: Chat Detail (Usually separate screen, but stacking here to match "all in one" visual request) */}
-            <div className="flex-1 flex flex-col min-h-0 bg-background relative border-t border-slate-200">
+            {/* Right: Chat Detail */}
+            <div className="flex-1 flex flex-col min-h-0 bg-background relative border-t border-slate-200 md:border-t-0">
                 <div className="flex items-center gap-3 bg-surface/95 backdrop-blur-md p-3 border-b border-slate-200 shrink-0 z-20">
                     <button className="text-text-secondary hover:text-primary transition-colors">
                         <span className="material-symbols-outlined">chevron_left</span>
@@ -150,7 +150,7 @@ export const Messages: React.FC<Props> = ({ onNavigate }) => {
                     </div>
                 </div>
 
-                <div className="absolute bottom-0 w-full p-3 bg-background border-t border-slate-200 z-30 pb-24">
+                <div className="absolute bottom-0 w-full p-3 bg-background border-t border-slate-200 z-30 pb-24 md:pb-3">
                     <div className="flex items-end gap-2">
                         <button className="p-3 text-text-secondary hover:text-primary transition-colors rounded-full hover:bg-surface shrink-0">
                             <span className="material-symbols-outlined">add_circle</span>

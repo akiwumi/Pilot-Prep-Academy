@@ -145,7 +145,7 @@ export const RegionSelect: React.FC<Props> = ({
                             </option>
                         ))}
                     </select>
-                    <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-[#92a4c9]">
+                    <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-text-secondary">
                         <span className="material-symbols-outlined">expand_more</span>
                     </div>
                 </div>
