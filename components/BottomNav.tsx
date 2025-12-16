@@ -49,11 +49,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeScreen, onNavigate, 
   return (
     <div className="fixed bottom-0 w-full max-w-md bg-surface/95 backdrop-blur-lg border-t border-slate-800 pb-safe pt-2 px-2 z-40 flex justify-between h-[80px]">
         {renderNavItem(Screen.CourseOverview, 'school', 'Course', true)}
-        {/* Placeholder logic for Logbook, usually would be a separate screen */}
-        <button className="flex flex-1 flex-col items-center justify-center gap-1 p-2 text-text-secondary hover:text-white transition-colors">
-           <span className="material-symbols-outlined text-[24px] unfilled">menu_book</span>
-           <span className="text-[10px] font-medium">Logbook</span>
-        </button>
+        {renderNavItem(Screen.Logbook, 'menu_book', 'Logbook')}
         {renderNavItem(Screen.LearningLibrary, 'folder_open', 'Resources')}
         {renderNavItem(Screen.Profile, 'person', 'Profile')}
     </div>

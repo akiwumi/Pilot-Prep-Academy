@@ -1,12 +1,28 @@
 import React from 'react';
 import { Screen } from '../App';
 import { IMAGES } from '../constants';
+import { REGIONS, type LocalityId, type RegionId } from '../data';
 
 interface Props {
   onNavigate: (screen: Screen) => void;
+  selectedRegionId: RegionId;
+  selectedLocalityId: LocalityId;
+  onSelectLocality: (regionId: RegionId, localityId: LocalityId) => void;
 }
 
-export const Directory: React.FC<Props> = ({ onNavigate }) => {
+export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onSelectLocality }) => {
+  const localityOptions = React.useMemo(
+    () =>
+      REGIONS.flatMap((r) =>
+        r.localities.map((l) => ({
+          value: l.id,
+          label: l.label,
+          regionId: r.id,
+        }))
+      ),
+    []
+  );
+
   return (
     <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24 bg-background">
       {/* Sticky Header */}
@@ -26,11 +42,20 @@ export const Directory: React.FC<Props> = ({ onNavigate }) => {
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <span className="material-symbols-outlined text-slate-400 text-[20px]">location_on</span>
             </div>
-            <select className="block w-full pl-10 pr-10 py-2.5 text-base border-gray-700 bg-surface rounded-lg focus:ring-primary focus:border-primary text-white appearance-none cursor-pointer shadow-sm">
-              <option>Florida (South)</option>
-              <option>Florida (Central)</option>
-              <option>California (SoCal)</option>
-              <option>Texas (North)</option>
+            <select
+              value={selectedLocalityId}
+              onChange={(e) => {
+                const localityId = e.target.value as LocalityId;
+                const match = localityOptions.find((o) => o.value === localityId);
+                if (match) onSelectLocality(match.regionId, localityId);
+              }}
+              className="block w-full pl-10 pr-10 py-2.5 text-base border-gray-700 bg-surface rounded-lg focus:ring-primary focus:border-primary text-white appearance-none cursor-pointer shadow-sm"
+            >
+              {localityOptions.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
             </select>
             <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
               <span className="material-symbols-outlined text-slate-400">expand_more</span>

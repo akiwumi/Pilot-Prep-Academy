@@ -1,12 +1,18 @@
 import React from 'react';
 import { Screen } from '../App';
 import { IMAGES } from '../constants';
+import { REGIONS, type LocalityId, type RegionId } from '../data';
 
 interface Props {
   onNavigate: (screen: Screen) => void;
+  selectedRegionId: RegionId;
+  selectedLocalityId: LocalityId;
 }
 
-export const Profile: React.FC<Props> = ({ onNavigate }) => {
+export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selectedLocalityId }) => {
+  const region = REGIONS.find((r) => r.id === selectedRegionId) ?? REGIONS[0];
+  const localityLabel = region.localities.find((l) => l.id === selectedLocalityId)?.label ?? selectedLocalityId;
+
   return (
     <div className="bg-background font-display text-white min-h-screen flex flex-col pb-24 overflow-x-hidden transition-colors duration-200">
         <div className="flex items-center px-4 py-4 pt-12 lg:pt-6 sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-transparent">
@@ -37,6 +43,26 @@ export const Profile: React.FC<Props> = ({ onNavigate }) => {
         </div>
 
         <div className="px-4 flex flex-col gap-6 w-full max-w-lg mx-auto">
+            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-white/5">
+                <div className="flex items-center gap-4">
+                    <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                        <span className="material-symbols-outlined" style={{ fontSize: '26px' }}>public</span>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-base leading-tight">Region & Locality</h3>
+                        <p className="text-xs text-text-secondary mt-1 truncate">
+                            {region.name} • {localityLabel} • {region.standard}
+                        </p>
+                    </div>
+                    <button
+                        onClick={() => onNavigate(Screen.RegionSelect)}
+                        className="shrink-0 text-primary font-bold text-sm hover:text-blue-400 transition-colors"
+                    >
+                        Change
+                    </button>
+                </div>
+            </div>
+
             <div className="bg-surface rounded-2xl p-5 shadow-sm border border-white/5">
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="font-bold text-lg">Flight Hours</h3>

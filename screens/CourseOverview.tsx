@@ -42,7 +42,10 @@ export const CourseOverview: React.FC<Props> = ({ onNavigate }) => {
                             <p className="text-slate-500 text-[10px] mt-0.5 font-medium">14 of 40 Modules</p>
                         </div>
                     </div>
-                    <div className="flex flex-1 flex-col justify-between rounded-2xl border border-gray-800 bg-surface p-4 shadow-sm relative overflow-hidden">
+                    <div
+                        onClick={() => onNavigate(Screen.Logbook)}
+                        className="flex flex-1 flex-col justify-between rounded-2xl border border-gray-800 bg-surface p-4 shadow-sm relative overflow-hidden cursor-pointer hover:border-gray-700 transition-colors"
+                    >
                         <div className="flex items-center justify-between w-full mb-2">
                             <div className="flex items-center justify-center size-10 rounded-full bg-blue-500/10 text-blue-500">
                                 <span className="material-symbols-outlined text-xl">flight_takeoff</span>
