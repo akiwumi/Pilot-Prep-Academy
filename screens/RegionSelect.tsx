@@ -65,7 +65,7 @@ export const RegionSelect: React.FC<Props> = ({
 
             <div className="pb-6">
                 <div className="flex w-full flex-1 items-stretch rounded-xl h-12 shadow-sm">
-                    <div className="text-[#92a4c9] flex bg-surface items-center justify-center pl-4 rounded-l-xl border-none">
+                    <div className="text-text-secondary flex bg-surface items-center justify-center pl-4 rounded-l-xl border-none">
                         <span className="material-symbols-outlined text-[24px]">search</span>
                     </div>
                     <input
