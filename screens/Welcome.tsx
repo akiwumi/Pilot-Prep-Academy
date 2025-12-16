@@ -38,7 +38,7 @@ export const Welcome: React.FC<Props> = ({ onNavigate }) => {
                     </p>
                 </div>
                 
-                <div className="flex flex-col gap-3 w-full">
+                <div className="flex flex-col gap-3 w-full max-w-sm mx-auto">
                     <button 
                         onClick={() => onNavigate(Screen.Walkthrough)}
                         className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-primary hover:bg-primary-dark transition-colors text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/25"
@@ -48,7 +48,7 @@ export const Welcome: React.FC<Props> = ({ onNavigate }) => {
                     </button>
                     <button 
                         onClick={() => onNavigate(Screen.Login)}
-                        className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em]"
+                        className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-surface/60 hover:bg-surface-highlight backdrop-blur-sm border border-slate-200 transition-colors text-slate-900 text-base font-bold leading-normal tracking-[0.015em]"
                     >
                         <span className="mr-2">Log In</span>
                         <span className="material-symbols-outlined text-lg">login</span>
