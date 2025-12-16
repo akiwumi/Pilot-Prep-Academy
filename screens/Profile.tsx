@@ -14,14 +14,14 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
   const localityLabel = region.localities.find((l) => l.id === selectedLocalityId)?.label ?? selectedLocalityId;
 
   return (
-    <div className="bg-background font-display text-white min-h-screen flex flex-col pb-24 overflow-x-hidden transition-colors duration-200">
+    <div className="bg-background font-display text-slate-900 min-h-screen flex flex-col pb-24 overflow-x-hidden transition-colors duration-200">
         <div className="flex items-center px-4 py-4 pt-12 lg:pt-6 sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-transparent">
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-full active:bg-white/10 cursor-pointer transition-colors" onClick={() => onNavigate(Screen.CourseOverview)}>
-                <span className="material-symbols-outlined text-white" style={{ fontSize: '24px' }}>arrow_back</span>
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-full active:bg-surface-highlight cursor-pointer transition-colors" onClick={() => onNavigate(Screen.CourseOverview)}>
+                <span className="material-symbols-outlined text-slate-700" style={{ fontSize: '24px' }}>arrow_back</span>
             </div>
             <h2 className="text-lg font-bold leading-tight flex-1 text-center">Pilot Profile</h2>
             <div className="flex w-10 items-center justify-center">
-                <button className="text-primary font-bold text-sm hover:text-blue-400 transition-colors">Edit</button>
+                <button className="text-primary font-bold text-sm hover:text-primary-dark transition-colors">Edit</button>
             </div>
         </div>
 
@@ -43,7 +43,7 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
         </div>
 
         <div className="px-4 flex flex-col gap-6 w-full max-w-lg mx-auto">
-            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-white/5">
+            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-slate-200">
                 <div className="flex items-center gap-4">
                     <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                         <span className="material-symbols-outlined" style={{ fontSize: '26px' }}>public</span>
@@ -56,14 +56,14 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                     </div>
                     <button
                         onClick={() => onNavigate(Screen.RegionSelect)}
-                        className="shrink-0 text-primary font-bold text-sm hover:text-blue-400 transition-colors"
+                        className="shrink-0 text-primary font-bold text-sm hover:text-primary-dark transition-colors"
                     >
                         Change
                     </button>
                 </div>
             </div>
 
-            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-white/5">
+            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-slate-200">
                 <div className="flex justify-between items-center mb-6">
                     <h3 className="font-bold text-lg">Flight Hours</h3>
                     <span className="text-xs font-medium text-text-secondary">15 / 40 Req.</span>
@@ -71,8 +71,8 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                 <div className="flex flex-row items-center gap-6">
                     <div className="relative size-32 shrink-0 flex items-center justify-center">
                         <svg className="size-full -rotate-90" viewBox="0 0 36 36">
-                            <path className="text-gray-700" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="3"></path>
-                            <path className="text-primary drop-shadow-[0_0_4px_rgba(19,91,236,0.5)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeDasharray="38, 100" strokeLinecap="round" strokeWidth="3"></path>
+                            <path className="text-slate-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeWidth="3"></path>
+                            <path className="text-primary drop-shadow-[0_0_4px_rgba(225,29,72,0.25)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" strokeDasharray="38, 100" strokeLinecap="round" strokeWidth="3"></path>
                         </svg>
                         <div className="absolute flex flex-col items-center">
                             <span className="text-2xl font-bold">38%</span>
@@ -85,7 +85,7 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                                 <span className="text-text-secondary">Dual</span>
                                 <span className="font-bold">10.0 hrs</span>
                             </div>
-                            <div className="h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
                                 <div className="h-full bg-blue-400 w-[25%]"></div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                                 <span className="text-text-secondary">Solo</span>
                                 <span className="font-bold">5.0 hrs</span>
                             </div>
-                            <div className="h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
                                 <div className="h-full bg-green-400 w-[12%]"></div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                                 <span className="text-text-secondary">Ground</span>
                                 <span className="font-bold">22 hrs</span>
                             </div>
-                            <div className="h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
                                 <div className="h-full bg-purple-400 w-[55%]"></div>
                             </div>
                         </div>
@@ -112,24 +112,24 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
             </div>
 
             <div className="grid grid-cols-3 gap-3">
-                <div className="bg-surface p-4 rounded-xl flex flex-col items-center justify-center gap-1 shadow-sm border border-white/5">
+                <div className="bg-surface p-4 rounded-xl flex flex-col items-center justify-center gap-1 shadow-sm border border-slate-200">
                     <span className="material-symbols-outlined text-primary mb-1" style={{ fontSize: '24px' }}>person</span>
                     <span className="text-2xl font-bold leading-none">5.0</span>
                     <span className="text-[11px] font-medium text-text-secondary text-center">Solo Hours</span>
                 </div>
-                <div className="bg-surface p-4 rounded-xl flex flex-col items-center justify-center gap-1 shadow-sm border border-white/5">
+                <div className="bg-surface p-4 rounded-xl flex flex-col items-center justify-center gap-1 shadow-sm border border-slate-200">
                     <span className="material-symbols-outlined text-primary mb-1" style={{ fontSize: '24px' }}>flight_land</span>
                     <span className="text-2xl font-bold leading-none">42</span>
                     <span className="text-[11px] font-medium text-text-secondary text-center">Landings</span>
                 </div>
-                <div className="bg-surface p-4 rounded-xl flex flex-col items-center justify-center gap-1 shadow-sm border border-white/5">
+                <div className="bg-surface p-4 rounded-xl flex flex-col items-center justify-center gap-1 shadow-sm border border-slate-200">
                     <span className="material-symbols-outlined text-primary mb-1" style={{ fontSize: '24px' }}>assignment_turned_in</span>
                     <span className="text-2xl font-bold leading-none">2/3</span>
                     <span className="text-[11px] font-medium text-text-secondary text-center">Exams</span>
                 </div>
             </div>
 
-            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-white/5">
+            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-slate-200">
                 <div className="flex items-center gap-4 mb-5">
                     <div className="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                         <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>verified_user</span>
@@ -141,22 +141,22 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                     <span className="bg-green-500/20 text-green-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wide">Earned</span>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                    <button className="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl text-sm font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20">
+                    <button className="flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl text-sm font-bold hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
                         <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>visibility</span>
                         View
                     </button>
                     <div className="flex gap-3">
-                        <button aria-label="Download Certificate" className="flex-1 flex items-center justify-center bg-gray-700 text-slate-200 rounded-xl hover:bg-gray-600 transition-colors">
+                        <button aria-label="Download Certificate" className="flex-1 flex items-center justify-center bg-surface-highlight text-slate-700 rounded-xl hover:bg-slate-200 transition-colors">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>download</span>
                         </button>
-                        <button aria-label="Share Certificate" className="flex-1 flex items-center justify-center bg-gray-700 text-slate-200 rounded-xl hover:bg-gray-600 transition-colors">
+                        <button aria-label="Share Certificate" className="flex-1 flex items-center justify-center bg-surface-highlight text-slate-700 rounded-xl hover:bg-slate-200 transition-colors">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>share</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-white/5">
+            <div className="bg-surface rounded-2xl p-5 shadow-sm border border-slate-200">
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="font-bold text-base">Last 30 Days</h3>
                     <span className="text-sm font-medium text-green-500">+2.5 hrs</span>
@@ -165,7 +165,7 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                     <div className="w-full bg-primary/20 h-[30%] rounded-t-md hover:bg-primary/30 transition-all cursor-pointer relative group"></div>
                     <div className="w-full bg-primary/20 h-[60%] rounded-t-md hover:bg-primary/30 transition-all cursor-pointer relative group"></div>
                     <div className="w-full bg-primary/20 h-[20%] rounded-t-md hover:bg-primary/30 transition-all cursor-pointer relative group"></div>
-                    <div className="w-full bg-primary h-[85%] rounded-t-md shadow-[0_0_10px_rgba(19,91,236,0.3)] relative group"></div>
+                    <div className="w-full bg-primary h-[85%] rounded-t-md shadow-[0_0_10px_rgba(225,29,72,0.25)] relative group"></div>
                     <div className="w-full bg-primary/20 h-[45%] rounded-t-md hover:bg-primary/30 transition-all cursor-pointer relative group"></div>
                 </div>
                 <div className="flex justify-between text-xs text-text-secondary mt-2 px-1">
@@ -179,9 +179,9 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
 
             <div className="flex flex-col gap-2 mt-2">
                 <h3 className="text-sm font-bold text-text-secondary uppercase tracking-wider px-2">Account</h3>
-                <div className="bg-surface rounded-xl overflow-hidden shadow-sm border border-white/5 divide-y divide-white/5">
-                    <button className="w-full flex items-center gap-4 p-4 hover:bg-white/5 transition-colors text-left">
-                        <div className="size-8 rounded-full bg-gray-700 flex items-center justify-center text-slate-300">
+                <div className="bg-surface rounded-xl overflow-hidden shadow-sm border border-slate-200 divide-y divide-slate-200">
+                    <button className="w-full flex items-center gap-4 p-4 hover:bg-surface-highlight transition-colors text-left">
+                        <div className="size-8 rounded-full bg-surface-highlight flex items-center justify-center text-slate-600">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>badge</span>
                         </div>
                         <div className="flex-1">
@@ -190,8 +190,8 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                         </div>
                         <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '20px' }}>chevron_right</span>
                     </button>
-                    <button className="w-full flex items-center gap-4 p-4 hover:bg-white/5 transition-colors text-left">
-                        <div className="size-8 rounded-full bg-gray-700 flex items-center justify-center text-slate-300">
+                    <button className="w-full flex items-center gap-4 p-4 hover:bg-surface-highlight transition-colors text-left">
+                        <div className="size-8 rounded-full bg-surface-highlight flex items-center justify-center text-slate-600">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>book</span>
                         </div>
                         <div className="flex-1">
@@ -200,8 +200,8 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                         </div>
                         <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '20px' }}>chevron_right</span>
                     </button>
-                    <button className="w-full flex items-center gap-4 p-4 hover:bg-white/5 transition-colors text-left">
-                        <div className="size-8 rounded-full bg-gray-700 flex items-center justify-center text-slate-300">
+                    <button className="w-full flex items-center gap-4 p-4 hover:bg-surface-highlight transition-colors text-left">
+                        <div className="size-8 rounded-full bg-surface-highlight flex items-center justify-center text-slate-600">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>tune</span>
                         </div>
                         <div className="flex-1">
@@ -214,9 +214,9 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
             </div>
 
             <div className="flex flex-col gap-2">
-                <div className="bg-surface rounded-xl overflow-hidden shadow-sm border border-white/5 divide-y divide-white/5">
-                    <button className="w-full flex items-center gap-4 p-4 hover:bg-white/5 transition-colors text-left">
-                        <div className="size-8 rounded-full bg-gray-700 flex items-center justify-center text-slate-300">
+                <div className="bg-surface rounded-xl overflow-hidden shadow-sm border border-slate-200 divide-y divide-slate-200">
+                    <button className="w-full flex items-center gap-4 p-4 hover:bg-surface-highlight transition-colors text-left">
+                        <div className="size-8 rounded-full bg-surface-highlight flex items-center justify-center text-slate-600">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>card_membership</span>
                         </div>
                         <div className="flex-1">
@@ -225,8 +225,8 @@ export const Profile: React.FC<Props> = ({ onNavigate, selectedRegionId, selecte
                         </div>
                         <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '20px' }}>chevron_right</span>
                     </button>
-                    <button className="w-full flex items-center gap-4 p-4 hover:bg-white/5 transition-colors text-left">
-                        <div className="size-8 rounded-full bg-gray-700 flex items-center justify-center text-slate-300">
+                    <button className="w-full flex items-center gap-4 p-4 hover:bg-surface-highlight transition-colors text-left">
+                        <div className="size-8 rounded-full bg-surface-highlight flex items-center justify-center text-slate-600">
                             <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>help</span>
                         </div>
                         <div className="flex-1">

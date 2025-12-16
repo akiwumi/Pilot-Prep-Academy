@@ -48,12 +48,12 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="bg-background font-display text-white min-h-screen flex flex-col pb-24">
-      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-gray-800">
+    <div className="bg-background font-display text-slate-900 min-h-screen flex flex-col pb-24">
+      <div className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-slate-200">
         <div className="flex items-center px-4 py-4 justify-between">
           <button
             onClick={() => onNavigate(Screen.CourseOverview)}
-            className="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+            className="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-surface-highlight transition-colors text-slate-700"
           >
             <span className="material-symbols-outlined text-[24px]">arrow_back</span>
           </button>
@@ -66,7 +66,7 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
       </div>
 
       <div className="px-4 pt-5">
-        <div className="rounded-2xl bg-surface border border-gray-800 p-4 shadow-sm">
+        <div className="rounded-2xl bg-surface border border-slate-200 p-4 shadow-sm">
           <h3 className="font-bold text-base mb-3 flex items-center gap-2">
             <span className="material-symbols-outlined text-primary">add</span>
             Add Flight
@@ -78,7 +78,7 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
                 type="date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="bg-background/40 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-primary focus:border-primary"
+                className="bg-background/40 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:ring-primary/30 focus:border-primary"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -87,7 +87,7 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
                 value={aircraft}
                 onChange={(e) => setAircraft(e.target.value)}
                 placeholder="C172"
-                className="bg-background/40 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-primary focus:border-primary"
+                className="bg-background/40 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:ring-primary/30 focus:border-primary"
               />
             </label>
             <label className="flex flex-col gap-1 col-span-2">
@@ -96,7 +96,7 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
                 value={route}
                 onChange={(e) => setRoute(e.target.value)}
                 placeholder="e.g. KORL → KISM"
-                className="bg-background/40 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-primary focus:border-primary"
+                className="bg-background/40 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:ring-primary/30 focus:border-primary"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -106,7 +106,7 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
                 value={hours}
                 onChange={(e) => setHours(e.target.value)}
                 placeholder="1.0"
-                className="bg-background/40 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-primary focus:border-primary"
+                className="bg-background/40 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:ring-primary/30 focus:border-primary"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -115,7 +115,7 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
                 value={remarks}
                 onChange={(e) => setRemarks(e.target.value)}
                 placeholder="Optional"
-                className="bg-background/40 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:ring-primary focus:border-primary"
+                className="bg-background/40 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 focus:ring-primary/30 focus:border-primary"
               />
             </label>
           </div>
@@ -133,15 +133,15 @@ export const Logbook: React.FC<Props> = ({ onNavigate }) => {
         <h3 className="text-sm font-bold text-text-secondary uppercase tracking-wider px-1 mb-3">Recent Flights</h3>
         <div className="flex flex-col gap-3">
           {entries.map((e) => (
-            <div key={e.id} className="rounded-2xl bg-surface border border-gray-800 p-4 shadow-sm">
+            <div key={e.id} className="rounded-2xl bg-surface border border-slate-200 p-4 shadow-sm">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="text-white font-semibold truncate">{e.route}</p>
+                  <p className="text-slate-900 font-semibold truncate">{e.route}</p>
                   <p className="text-xs text-text-secondary mt-0.5">{e.date} • {e.aircraft}</p>
-                  {e.remarks && <p className="text-sm text-slate-300 mt-2">{e.remarks}</p>}
+                  {e.remarks && <p className="text-sm text-slate-700 mt-2">{e.remarks}</p>}
                 </div>
                 <div className="shrink-0 text-right">
-                  <p className="text-white font-bold text-lg">{e.hours.toFixed(1)}</p>
+                  <p className="text-slate-900 font-bold text-lg">{e.hours.toFixed(1)}</p>
                   <p className="text-[10px] text-text-secondary font-bold uppercase tracking-wider">hrs</p>
                 </div>
               </div>

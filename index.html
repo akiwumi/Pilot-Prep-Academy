@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Pilot Prep</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
@@ -15,19 +15,20 @@
         theme: {
           extend: {
             colors: {
-              primary: "#135bec",
-              "primary-dark": "#0e46b5",
-              background: "#101622",
-              surface: "#192233",
-              "surface-highlight": "#1c2636",
-              "text-secondary": "#92a4c9",
+              // Design system (light)
+              primary: "#E11D48",
+              "primary-dark": "#BE123C",
+              background: "#F7F8FC",
+              surface: "#FFFFFF",
+              "surface-highlight": "#F1F5F9",
+              "text-secondary": "#64748B",
             },
             fontFamily: {
-              display: ["Lexend", "sans-serif"],
-              body: ["Noto Sans", "sans-serif"],
+              display: ["Inter", "sans-serif"],
+              body: ["Inter", "sans-serif"],
             },
             boxShadow: {
-                'glow': '0 0 20px rgba(19, 91, 236, 0.3)',
+                'glow': '0 0 20px rgba(225, 29, 72, 0.25)',
             }
           },
         },
@@ -35,8 +36,8 @@
     </script>
     <style>
       body {
-        background-color: #101622;
-        color: white;
+        background-color: #F7F8FC;
+        color: #0F172A;
         -webkit-tap-highlight-color: transparent;
       }
       .no-scrollbar::-webkit-scrollbar {
@@ -62,7 +63,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>

@@ -26,12 +26,12 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
   return (
     <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden pb-24 bg-background">
       {/* Sticky Header */}
-      <div className="sticky top-0 z-50 bg-background border-b border-gray-800">
+      <div className="sticky top-0 z-50 bg-background border-b border-slate-200">
         <div className="flex items-center px-4 py-3 justify-between">
-          <div className="text-white flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-gray-800 rounded-full transition-colors">
+          <div className="text-slate-700 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-surface-highlight rounded-full transition-colors">
             <span className="material-symbols-outlined">menu</span>
           </div>
-          <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Flight Schools</h2>
+          <h2 className="text-slate-900 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Flight Schools</h2>
           <div className="flex w-10 items-center justify-end cursor-pointer text-primary hover:text-primary-dark transition-colors">
             <span className="material-symbols-outlined text-[24px]">tune</span>
           </div>
@@ -49,7 +49,7 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
                 const match = localityOptions.find((o) => o.value === localityId);
                 if (match) onSelectLocality(match.regionId, localityId);
               }}
-              className="block w-full pl-10 pr-10 py-2.5 text-base border-gray-700 bg-surface rounded-lg focus:ring-primary focus:border-primary text-white appearance-none cursor-pointer shadow-sm"
+              className="block w-full pl-10 pr-10 py-2.5 text-base border border-slate-200 bg-surface rounded-lg focus:ring-primary/30 focus:border-primary text-slate-900 appearance-none cursor-pointer shadow-sm"
             >
               {localityOptions.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -63,7 +63,7 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
           </div>
           
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
-            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary/50 transition-colors">
+            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-slate-200 text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary/30 transition-colors text-slate-800">
               <span>Favorites Only</span>
               <span className="material-symbols-outlined text-[16px] text-pink-500 fill-[1]">favorite</span>
             </button>
@@ -71,11 +71,11 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
               <span>Part 141</span>
               <span className="material-symbols-outlined text-[16px]">close</span>
             </button>
-            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary/50 transition-colors">
+            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-slate-200 text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary/30 transition-colors text-slate-800">
               <span>Rating</span>
               <span className="material-symbols-outlined text-[16px]">expand_more</span>
             </button>
-            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-gray-700 text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary/50 transition-colors">
+            <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-slate-200 text-sm font-medium whitespace-nowrap shadow-sm hover:border-primary/30 transition-colors text-slate-800">
               <span>Distance</span>
               <span className="material-symbols-outlined text-[16px]">expand_more</span>
             </button>
@@ -89,33 +89,33 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
           <div className="text-slate-400 flex border-none bg-surface items-center justify-center pl-4 rounded-l-lg border-r-0">
             <span className="material-symbols-outlined">search</span>
           </div>
-          <input className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 border-none bg-surface focus:border-none h-full placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Search schools, airports (e.g. KMYF)" />
+          <input className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-slate-900 focus:outline-0 focus:ring-0 border-none bg-surface focus:border-none h-full placeholder:text-text-secondary px-4 pl-2 text-base font-normal leading-normal" placeholder="Search schools, airports (e.g. KMYF)" />
         </div>
       </div>
 
       {/* Directory List */}
       <div className="flex flex-col gap-4 px-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-slate-400 text-sm font-medium uppercase tracking-wider px-1">Featured Schools</h3>
-          <span className="text-xs text-slate-400">12 results</span>
+          <h3 className="text-text-secondary text-sm font-medium uppercase tracking-wider px-1">Featured Schools</h3>
+          <span className="text-xs text-text-secondary">12 results</span>
         </div>
 
         {/* Card 1 */}
-        <div onClick={() => onNavigate(Screen.Messages)} className="flex flex-col sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface p-4 shadow-sm border border-gray-800 relative cursor-pointer hover:border-gray-700 transition-colors">
+        <div onClick={() => onNavigate(Screen.Messages)} className="flex flex-col sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface p-4 shadow-sm border border-slate-200 relative cursor-pointer hover:border-slate-300 transition-colors">
           <div className="flex flex-[2_2_0px] flex-col justify-between gap-3">
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-1 text-amber-400 mb-1">
                 <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                <span className="text-slate-300 text-sm font-semibold leading-normal">4.8 <span className="font-normal text-slate-400">(120)</span></span>
+                <span className="text-slate-700 text-sm font-semibold leading-normal">4.8 <span className="font-normal text-text-secondary">(120)</span></span>
               </div>
-              <p className="text-white text-lg font-bold leading-tight pr-8 sm:pr-0">Blue Skies Aviation</p>
-              <div className="flex items-start gap-1 text-slate-400 mt-0.5">
+              <p className="text-slate-900 text-lg font-bold leading-tight pr-8 sm:pr-0">Blue Skies Aviation</p>
+              <div className="flex items-start gap-1 text-text-secondary mt-0.5">
                 <span className="material-symbols-outlined text-[16px] mt-0.5">pin_drop</span>
                 <p className="text-sm font-normal leading-normal">Orlando Executive (KORL) • 5mi</p>
               </div>
               <div className="flex gap-1.5 mt-1 flex-wrap">
-                <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-500/10">Cessna 172</span>
-                <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-500/10">Piper PA-28</span>
+                <span className="inline-flex items-center rounded-md bg-surface-highlight px-2 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">Cessna 172</span>
+                <span className="inline-flex items-center rounded-md bg-surface-highlight px-2 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">Piper PA-28</span>
               </div>
             </div>
             <div className="flex gap-2 mt-2">
@@ -126,7 +126,7 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
               <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
                 <span className="material-symbols-outlined text-[20px]">chat</span>
               </button>
-              <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-gray-700 text-pink-500 hover:bg-gray-600 transition-colors">
+              <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-surface-highlight text-pink-500 hover:bg-slate-200 transition-colors">
                 <span className="material-symbols-outlined text-[20px] fill-current">favorite</span>
               </button>
             </div>
@@ -137,20 +137,20 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
         </div>
 
         {/* Card 2 */}
-        <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface p-4 shadow-sm border border-gray-800 relative">
+        <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface p-4 shadow-sm border border-slate-200 relative">
           <div className="flex flex-[2_2_0px] flex-col justify-between gap-3">
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-1 text-amber-400 mb-1">
                 <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                <span className="text-slate-300 text-sm font-semibold leading-normal">4.5 <span className="font-normal text-slate-400">(85)</span></span>
+                <span className="text-slate-700 text-sm font-semibold leading-normal">4.5 <span className="font-normal text-text-secondary">(85)</span></span>
               </div>
-              <p className="text-white text-lg font-bold leading-tight pr-8 sm:pr-0">Gulf Coast Flight Academy</p>
-              <div className="flex items-start gap-1 text-slate-400 mt-0.5">
+              <p className="text-slate-900 text-lg font-bold leading-tight pr-8 sm:pr-0">Gulf Coast Flight Academy</p>
+              <div className="flex items-start gap-1 text-text-secondary mt-0.5">
                 <span className="material-symbols-outlined text-[16px] mt-0.5">pin_drop</span>
                 <p className="text-sm font-normal leading-normal">Tampa Intl (KTPA) • 12mi</p>
               </div>
               <div className="flex gap-1.5 mt-1 flex-wrap">
-                <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-500/10">Glass Cockpit</span>
+                <span className="inline-flex items-center rounded-md bg-surface-highlight px-2 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">Glass Cockpit</span>
               </div>
             </div>
             <div className="flex gap-2 mt-2">
@@ -161,7 +161,7 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
               <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
                 <span className="material-symbols-outlined text-[20px]">chat</span>
               </button>
-              <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-gray-700 text-slate-400 hover:text-pink-500 hover:bg-gray-600 transition-colors">
+              <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-surface-highlight text-text-secondary hover:text-pink-500 hover:bg-slate-200 transition-colors">
                 <span className="material-symbols-outlined text-[20px]">favorite_border</span>
               </button>
             </div>
@@ -172,20 +172,20 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
         </div>
 
         {/* Card 3 */}
-        <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface p-4 shadow-sm border border-gray-800 relative">
+        <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 rounded-xl bg-surface p-4 shadow-sm border border-slate-200 relative">
           <div className="flex flex-[2_2_0px] flex-col justify-between gap-3">
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-1 text-amber-400 mb-1">
                 <span className="material-symbols-outlined text-[18px] fill-current">star</span>
-                <span className="text-slate-300 text-sm font-semibold leading-normal">4.9 <span className="font-normal text-slate-400">(210)</span></span>
+                <span className="text-slate-700 text-sm font-semibold leading-normal">4.9 <span className="font-normal text-text-secondary">(210)</span></span>
               </div>
-              <p className="text-white text-lg font-bold leading-tight pr-8 sm:pr-0">Sun State Aviation</p>
-              <div className="flex items-start gap-1 text-slate-400 mt-0.5">
+              <p className="text-slate-900 text-lg font-bold leading-tight pr-8 sm:pr-0">Sun State Aviation</p>
+              <div className="flex items-start gap-1 text-text-secondary mt-0.5">
                 <span className="material-symbols-outlined text-[16px] mt-0.5">pin_drop</span>
                 <p className="text-sm font-normal leading-normal">Kissimmee Gateway (KISM) • 8mi</p>
               </div>
               <div className="flex gap-1.5 mt-1 flex-wrap">
-                <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-500/10">Cirrus SR20</span>
+                <span className="inline-flex items-center rounded-md bg-surface-highlight px-2 py-1 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">Cirrus SR20</span>
               </div>
             </div>
             <div className="flex gap-2 mt-2">
@@ -196,7 +196,7 @@ export const Directory: React.FC<Props> = ({ onNavigate, selectedLocalityId, onS
               <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
                 <span className="material-symbols-outlined text-[20px]">chat</span>
               </button>
-              <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-gray-700 text-slate-400 hover:text-pink-500 hover:bg-gray-600 transition-colors">
+              <button className="flex items-center justify-center overflow-hidden rounded-lg h-9 w-9 bg-surface-highlight text-text-secondary hover:text-pink-500 hover:bg-slate-200 transition-colors">
                 <span className="material-symbols-outlined text-[20px]">favorite_border</span>
               </button>
             </div>

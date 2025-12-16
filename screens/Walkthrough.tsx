@@ -12,7 +12,7 @@ export const Walkthrough: React.FC<Props> = ({ onNavigate }) => {
       <div className="flex items-center p-6 pb-2 justify-end shrink-0 z-20">
         <button 
             onClick={() => onNavigate(Screen.Setup)}
-            className="flex items-center justify-center rounded-full px-3 py-2 hover:bg-white/10 transition-colors cursor-pointer group"
+            className="flex items-center justify-center rounded-full px-3 py-2 hover:bg-surface-highlight transition-colors cursor-pointer group"
         >
             <span className="text-text-secondary text-sm font-bold group-hover:text-primary transition-colors">Skip</span>
         </button>
@@ -30,7 +30,7 @@ export const Walkthrough: React.FC<Props> = ({ onNavigate }) => {
                         <span className="material-symbols-outlined text-[32px]">school</span>
                     </div>
                     <div>
-                        <h2 className="text-white text-2xl font-bold leading-tight mb-3">Structured Learning</h2>
+                        <h2 className="text-slate-900 text-2xl font-bold leading-tight mb-3">Structured Learning</h2>
                         <p className="text-text-secondary text-base font-normal leading-relaxed">
                             Step-by-step guidance through the entire PPL syllabus, designed to keep you on track.
                         </p>
@@ -48,7 +48,7 @@ export const Walkthrough: React.FC<Props> = ({ onNavigate }) => {
                         <span className="material-symbols-outlined text-[32px]">menu_book</span>
                     </div>
                     <div>
-                        <h2 className="text-white text-2xl font-bold leading-tight mb-3">Pocket Library</h2>
+                        <h2 className="text-slate-900 text-2xl font-bold leading-tight mb-3">Pocket Library</h2>
                         <p className="text-text-secondary text-base font-normal leading-relaxed">
                             Instant access to regulations, aircraft manuals, and study guides right in your pocket.
                         </p>
@@ -61,12 +61,12 @@ export const Walkthrough: React.FC<Props> = ({ onNavigate }) => {
       <div className="flex flex-col items-center justify-center w-full pb-10 pt-4 px-6 gap-8 shrink-0 z-20 bg-background">
         <div className="flex flex-row items-center justify-center gap-2.5">
             <div className="h-2 w-8 rounded-full bg-primary"></div>
-            <div className="h-2 w-2 rounded-full bg-[#324467]"></div>
-            <div className="h-2 w-2 rounded-full bg-[#324467]"></div>
+            <div className="h-2 w-2 rounded-full bg-slate-300"></div>
+            <div className="h-2 w-2 rounded-full bg-slate-300"></div>
         </div>
         <button 
             onClick={() => onNavigate(Screen.Setup)}
-            className="flex w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all text-white text-base font-bold tracking-[0.015em] shadow-[0_4px_12px_rgba(19,91,236,0.3)]"
+            className="flex w-full max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-6 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all text-white text-base font-bold tracking-[0.015em] shadow-[0_4px_12px_rgba(225,29,72,0.25)]"
         >
             <span className="truncate">Next Step</span>
             <span className="material-symbols-outlined ml-2 text-xl">arrow_forward</span>

@@ -37,11 +37,11 @@ export const Quiz: React.FC<Props> = ({ onNavigate, questions, onComplete }) => 
   };
 
   return (
-    <div className="relative flex h-screen w-full flex-col overflow-hidden bg-background text-white font-display">
-        <header className="flex items-center justify-between px-4 py-3 shrink-0 border-b border-gray-800">
+    <div className="relative flex h-screen w-full flex-col overflow-hidden bg-background text-slate-900 font-display">
+        <header className="flex items-center justify-between px-4 py-3 shrink-0 border-b border-slate-200">
             <button 
                 onClick={() => onNavigate(Screen.CourseOverview)}
-                className="flex items-center justify-center p-2 -ml-2 rounded-full hover:bg-surface transition-colors text-gray-400"
+                className="flex items-center justify-center p-2 -ml-2 rounded-full hover:bg-surface-highlight transition-colors text-slate-500"
             >
                 <span className="material-symbols-outlined text-2xl">close</span>
             </button>
@@ -55,7 +55,7 @@ export const Quiz: React.FC<Props> = ({ onNavigate, questions, onComplete }) => 
             <div className="max-w-md mx-auto flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-end">
-                        <span className="text-sm font-medium text-gray-400">Question {index + 1} of {total}</span>
+                        <span className="text-sm font-medium text-text-secondary">Question {index + 1} of {total}</span>
                         <span className="text-xs font-bold text-primary">{q.topic}</span>
                     </div>
                     <div className="h-2 w-full rounded-full bg-surface overflow-hidden">
@@ -65,7 +65,7 @@ export const Quiz: React.FC<Props> = ({ onNavigate, questions, onComplete }) => 
 
                 <div className="flex flex-col gap-4">
                     {q.figure && (
-                        <div className="relative w-full h-48 rounded-xl overflow-hidden bg-surface border border-gray-700">
+                        <div className="relative w-full h-48 rounded-xl overflow-hidden bg-surface border border-slate-200">
                             <img src={q.figure.src} alt={q.figure.label} className="w-full h-full object-cover opacity-80" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                             <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs text-white font-medium">{q.figure.label}</div>
@@ -89,17 +89,17 @@ export const Quiz: React.FC<Props> = ({ onNavigate, questions, onComplete }) => 
                                 className={`group relative flex w-full items-center gap-4 rounded-xl p-4 transition-all border ${
                                     isSelected
                                         ? 'border-2 border-primary bg-primary/10 hover:bg-primary/20'
-                                        : 'border-gray-700 bg-surface hover:border-primary/50 hover:bg-[#232d3f]'
+                                        : 'border-slate-200 bg-surface hover:border-primary/30 hover:bg-surface-highlight'
                                 }`}
                             >
                                 <div className="flex items-center justify-center">
-                                    <span className={`size-5 rounded-full border-2 ${isSelected ? 'border-primary bg-primary/20' : 'border-gray-500'}`} />
+                                    <span className={`size-5 rounded-full border-2 ${isSelected ? 'border-primary bg-primary/20' : 'border-slate-300'}`} />
                                 </div>
                                 <div className="flex grow flex-col items-start text-left">
-                                    <span className={`text-sm font-bold mb-0.5 ${isSelected ? 'text-primary' : 'text-gray-400'}`}>
+                                    <span className={`text-sm font-bold mb-0.5 ${isSelected ? 'text-primary' : 'text-text-secondary'}`}>
                                         Option {String.fromCharCode(65 + choiceIndex)}
                                     </span>
-                                    <span className="text-base font-medium text-white">{choice}</span>
+                                    <span className="text-base font-medium text-slate-900">{choice}</span>
                                 </div>
                                 {isSelected && (
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-primary">
@@ -113,12 +113,12 @@ export const Quiz: React.FC<Props> = ({ onNavigate, questions, onComplete }) => 
             </div>
         </main>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-background border-t border-gray-800 backdrop-blur-xl bg-opacity-90">
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-background border-t border-slate-200 backdrop-blur-xl bg-opacity-90">
             <div className="max-w-md mx-auto flex gap-4">
                 <button
                     onClick={goPrev}
                     disabled={index === 0}
-                    className="flex-1 h-12 flex items-center justify-center gap-2 rounded-xl border border-gray-600 bg-transparent text-white text-base font-bold hover:bg-surface transition-colors active:scale-[0.98] disabled:opacity-40 disabled:hover:bg-transparent"
+                    className="flex-1 h-12 flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-transparent text-slate-900 text-base font-bold hover:bg-surface-highlight transition-colors active:scale-[0.98] disabled:opacity-40 disabled:hover:bg-transparent"
                 >
                     <span className="material-symbols-outlined text-xl">arrow_back</span>
                     <span>Previous</span>

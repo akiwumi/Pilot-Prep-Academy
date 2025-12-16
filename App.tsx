@@ -147,7 +147,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex justify-center min-h-screen bg-background font-display text-white selection:bg-primary selection:text-white">
+    <div className="flex justify-center min-h-screen bg-background font-display text-slate-900 selection:bg-primary selection:text-white">
       <div className="w-full max-w-md h-full min-h-screen relative bg-background shadow-2xl flex flex-col">
         {renderScreen()}
 
@@ -155,7 +155,7 @@ export default function App() {
         {activeScreen !== Screen.Welcome && (
           <button
             onClick={() => navigate(Screen.Welcome)}
-            className="fixed top-4 right-4 z-[60] size-11 rounded-full bg-surface/90 backdrop-blur border border-white/10 shadow-lg flex items-center justify-center hover:bg-surface-highlight transition-colors"
+            className="fixed top-4 right-4 z-[60] size-11 rounded-full bg-surface/95 backdrop-blur border border-slate-200 shadow-lg flex items-center justify-center hover:bg-surface-highlight transition-colors"
             aria-label="Back to Landing Page"
             title="Back to Landing Page"
           >

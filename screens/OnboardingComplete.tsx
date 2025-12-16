@@ -25,8 +25,8 @@ export const OnboardingComplete: React.FC<Props> = ({ onNavigate }) => {
             </div>
 
             <div className="flex flex-col items-center gap-3 text-center max-w-[320px] mt-4">
-                <h1 className="text-3xl font-bold tracking-tight text-white">All Systems Go</h1>
-                <p className="text-gray-400 text-base leading-relaxed">
+                <h1 className="text-3xl font-bold tracking-tight text-slate-900">All Systems Go</h1>
+                <p className="text-text-secondary text-base leading-relaxed">
                     Your student pilot profile is set up. Your journey to the Private Pilot License starts now. Let’s get you in the air.
                 </p>
             </div>
@@ -42,7 +42,7 @@ export const OnboardingComplete: React.FC<Props> = ({ onNavigate }) => {
             </button>
             <button 
                 onClick={() => onNavigate(Screen.Directory)}
-                className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-gray-300 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-gray-800 transition-colors"
+                className="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-slate-700 text-sm font-semibold leading-normal tracking-[0.015em] hover:bg-surface-highlight transition-colors"
             >
                 <span className="truncate">Explore Directory</span>
             </button>

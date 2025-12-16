@@ -61,8 +61,8 @@ export const Welcome: React.FC<Props> = ({ onNavigate }) => {
       <div className="flex flex-col px-4 pb-8 pt-2 justify-center items-center gap-4">
         <div className="flex gap-2 mt-2">
             <div className="w-2 h-2 rounded-full bg-primary"></div>
-            <div className="w-2 h-2 rounded-full bg-slate-700"></div>
-            <div className="w-2 h-2 rounded-full bg-slate-700"></div>
+            <div className="w-2 h-2 rounded-full bg-slate-300"></div>
+            <div className="w-2 h-2 rounded-full bg-slate-300"></div>
         </div>
       </div>
     </div>

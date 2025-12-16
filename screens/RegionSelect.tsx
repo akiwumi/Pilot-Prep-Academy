@@ -42,11 +42,11 @@ export const RegionSelect: React.FC<Props> = ({
     previousScreen === Screen.Setup ? Screen.OnboardingComplete : previousScreen ?? Screen.CourseOverview;
 
   return (
-    <div className="relative flex h-full min-h-screen w-full flex-col bg-background text-white">
-        <div className="sticky top-0 z-20 flex items-center bg-background/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-gray-800">
+    <div className="relative flex h-full min-h-screen w-full flex-col bg-background text-slate-900">
+        <div className="sticky top-0 z-20 flex items-center bg-background/95 backdrop-blur-md p-4 pb-2 justify-between border-b border-slate-200">
             <button 
                 onClick={() => onNavigate(previousScreen ?? Screen.Setup)}
-                className="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+                className="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-surface-highlight transition-colors"
             >
                 <span className="material-symbols-outlined text-[24px]">arrow_back</span>
             </button>
@@ -58,7 +58,7 @@ export const RegionSelect: React.FC<Props> = ({
                 <h2 className="tracking-tight text-[28px] font-bold leading-tight text-left">Where are you flying?</h2>
             </div>
             <div className="pb-6">
-                <p className="text-gray-400 text-base font-normal leading-normal">
+                <p className="text-text-secondary text-base font-normal leading-normal">
                     We’ll customize your regulations, schools, and study materials based on your location.
                 </p>
             </div>
@@ -71,7 +71,7 @@ export const RegionSelect: React.FC<Props> = ({
                     <input
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl rounded-l-none text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 bg-surface placeholder:text-[#92a4c9] px-4 pl-2 text-base font-normal leading-normal h-full transition-all"
+                        className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl rounded-l-none text-slate-900 focus:outline-0 focus:ring-2 focus:ring-primary/30 bg-surface placeholder:text-text-secondary px-4 pl-2 text-base font-normal leading-normal h-full transition-all"
                         placeholder="Search region or locality..."
                     />
                 </div>
@@ -83,16 +83,16 @@ export const RegionSelect: React.FC<Props> = ({
                         <span className="material-symbols-outlined text-[24px]">my_location</span>
                     </div>
                     <div className="flex-1 text-left">
-                        <p className="text-white text-base font-medium leading-normal truncate">Use Current Location</p>
+                        <p className="text-slate-900 text-base font-medium leading-normal truncate">Use Current Location</p>
                     </div>
-                    <div className="shrink-0 text-gray-500">
+                    <div className="shrink-0 text-slate-500">
                         <span className="material-symbols-outlined text-[24px]">chevron_right</span>
                     </div>
                 </button>
             </div>
 
             <div className="mb-2">
-                <h3 className="text-gray-400 text-sm font-bold uppercase tracking-wider px-1 mb-3">Regions</h3>
+                <h3 className="text-text-secondary text-sm font-bold uppercase tracking-wider px-1 mb-3">Regions</h3>
                 <div className="flex flex-col gap-3">
                     {filteredRegions.map((region) => {
                         const isSelected = region.id === draftRegionId;
@@ -106,16 +106,16 @@ export const RegionSelect: React.FC<Props> = ({
                                     setDraftLocalityId(defaultLocality);
                                 }}
                                 className={`relative flex items-center justify-between gap-4 bg-surface px-4 py-3 rounded-xl shadow-sm cursor-pointer border transition-colors text-left ${
-                                    isSelected ? 'border-2 border-primary' : 'border-white/5 hover:border-white/10 active:bg-surface-highlight'
+                                    isSelected ? 'border-2 border-primary' : 'border-slate-200 hover:border-slate-300 active:bg-surface-highlight'
                                 }`}
                             >
                                 <div className="flex items-center gap-4">
-                                    <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-gray-700">
+                                    <div className="relative w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-surface-highlight">
                                         <img src={region.flag} alt={`${region.name} Flag`} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex flex-col min-w-0">
-                                        <p className={`text-white text-base leading-tight truncate ${isSelected ? 'font-semibold' : 'font-medium'}`}>{region.name}</p>
-                                        <span className={`${isSelected ? 'text-primary font-bold bg-primary/10' : 'text-gray-400 font-normal'} text-xs px-2 py-0.5 rounded-full w-fit mt-1`}>
+                                        <p className={`text-slate-900 text-base leading-tight truncate ${isSelected ? 'font-semibold' : 'font-medium'}`}>{region.name}</p>
+                                        <span className={`${isSelected ? 'text-primary font-bold bg-primary/10' : 'text-text-secondary font-normal bg-surface-highlight'} text-xs px-2 py-0.5 rounded-full w-fit mt-1`}>
                                             {region.standard}
                                         </span>
                                     </div>
@@ -132,12 +132,12 @@ export const RegionSelect: React.FC<Props> = ({
             </div>
 
             <div className="mt-6">
-                <h3 className="text-gray-400 text-sm font-bold uppercase tracking-wider px-1 mb-3">Locality</h3>
+                <h3 className="text-text-secondary text-sm font-bold uppercase tracking-wider px-1 mb-3">Locality</h3>
                 <div className="relative">
                     <select
                         value={draftLocalityId}
                         onChange={(e) => setDraftLocalityId(e.target.value as LocalityId)}
-                        className="block w-full px-4 py-3 text-base border-gray-700 bg-surface rounded-xl focus:ring-primary focus:border-primary text-white appearance-none cursor-pointer shadow-sm"
+                        className="block w-full px-4 py-3 text-base border border-slate-200 bg-surface rounded-xl focus:ring-primary/30 focus:border-primary text-slate-900 appearance-none cursor-pointer shadow-sm"
                     >
                         {draftRegion.localities.map((l) => (
                             <option key={l.id} value={l.id}>
@@ -149,7 +149,7 @@ export const RegionSelect: React.FC<Props> = ({
                         <span className="material-symbols-outlined">expand_more</span>
                     </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-2 px-1">
+                <p className="text-xs text-slate-500 mt-2 px-1">
                     You can change this anytime later (Directory / Profile).
                 </p>
             </div>
