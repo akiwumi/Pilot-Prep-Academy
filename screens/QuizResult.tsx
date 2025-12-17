@@ -27,9 +27,15 @@ export const QuizResult: React.FC<Props> = ({ onNavigate, result, onRetake }) =>
         </div>
 
         <div className="sticky top-0 z-50 flex items-center bg-background p-4 pb-2 justify-between border-b border-slate-200/70">
-            <div onClick={() => onNavigate(Screen.CourseOverview)} className="flex size-12 shrink-0 items-center justify-start text-slate-700 cursor-pointer hover:opacity-70 transition-opacity">
+            <button
+                type="button"
+                onClick={() => onNavigate(Screen.CourseOverview)}
+                className="flex size-12 shrink-0 items-center justify-start text-slate-700 cursor-pointer hover:opacity-70 transition-opacity"
+                aria-label="Back to Course"
+                title="Back to Course"
+            >
                 <span className="material-symbols-outlined text-2xl">arrow_back</span>
-            </div>
+            </button>
             <h2 className="text-slate-900 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">
                 Demo Quiz Results
             </h2>
@@ -124,7 +130,7 @@ export const QuizResult: React.FC<Props> = ({ onNavigate, result, onRetake }) =>
             </button>
         </main>
 
-        <div className="fixed bottom-0 left-0 w-full bg-background border-t border-slate-200 p-4 pb-8 backdrop-blur-lg bg-opacity-90">
+        <div className="fixed bottom-0 left-0 w-full bg-background border-t border-slate-200 p-4 pb-8 backdrop-blur-lg bg-opacity-90 z-50 pointer-events-auto">
             <div className="max-w-md mx-auto grid grid-cols-2 gap-3">
                 <button 
                     onClick={onRetake}
